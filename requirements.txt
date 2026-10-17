@@ -1,0 +1,23 @@
+# Secure Locker - Dependencies
+# Install: pip install -r requirements.txt
+
+# Core encryption: AES-256-GCM, HKDF
+cryptography>=42.0.0
+
+# Argon2id for Password/Security Answer KDF (stronger and more standard than PBKDF2/scrypt)
+argon2-cffi>=23.1.0
+
+# Drag & Drop in Lock/Unlock Dialog (optional - falls back to Browse/Paste if missing)
+tkinterdnd2>=0.4.2
+
+# Build a standalone Windows executable (only needed for building, not for running)
+pyinstaller>=6.3.0
+
+# --- For running the test suite (optional, dev environment only) ---
+pytest>=8.0.0
+
+# Notes:
+#   - tkinter and sqlite3 ship with Python itself; no separate install needed.
+#   - No other security-sensitive dependency is required; keeping the
+#     dependency list minimal is intentional (smaller attack surface,
+#     easier long-term maintenance).
